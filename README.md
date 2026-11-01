@@ -8,7 +8,7 @@ Modernizing the Lab 02 architecture by replacing the self-managed database VM wi
 
 ## 🎥 Watch Me Live
 
-[Watch me build this lab live →](PASTE_YOUR_LINK_HERE)
+[Watch me build this lab live →](https://www.loom.com/share/1edd8e032c1b47ea926c207b7657e93b)
 
 ## Overview
 
@@ -25,9 +25,9 @@ This lab modernizes the database tier from a manually managed IaaS virtual machi
 
 Instead of managing a database VM, the database is provided as a PaaS service. Sensitive credentials are stored in Azure Key Vault, while the web server uses a system-assigned Managed Identity to retrieve the secret without storing the password in application code or on the server.
 
-The resulting architecture is:
+The resulting architecture:
 
-**`vm-web-01` → Managed Identity → Azure Key Vault → Azure SQL Database**
+![Diagram showing vm-web-01 using a system-assigned Managed Identity to retrieve the SQL admin password from Azure Key Vault, then connecting to Azure SQL Database, with the old self-managed database VM shown decommissioned](./screenshots/paas-modernization-diagram.png)
 
 This introduces a common cloud pattern: **managed services + centralized secrets management + identity-based access**.
 
